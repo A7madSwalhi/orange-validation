@@ -10,12 +10,15 @@ const phoinp = document.getElementById("mobile");
 const boxagr = document.querySelector("#chAgree");
 const boxrec = document.querySelector("#is_newsletter");
 const btn = document.querySelector("#btnSubmit");
+const conpass = document.querySelector("#con-password");
+const fullname = document.querySelector("#name");
 
 console.log(boxagr);
 console.log(boxrec);
 console.log(form);
 console.log(emailinp);
 console.log(passinp);
+console.log(conpass);
 console.log(phoinp);
 
 console.log(boxagr.checked);
@@ -27,6 +30,7 @@ form.onsubmit = (e) => {
         mailreg.test(emailinp.value) &&
         phonereg.test(phoinp.value) &&
         passreg.test(passinp.value) &&
+        conpass.value === passinp.value &&
         boxagr.checked &&
         boxrec.checked
     ) {
@@ -37,6 +41,7 @@ form.onsubmit = (e) => {
     if (validation) {
         localStorage.setItem("email", emailinp.value);
         localStorage.setItem("password", passinp.value);
+        localStorage.setItem("Name", fullname.value);
         btn.disabled = true;
     } else {
         e.preventDefault();

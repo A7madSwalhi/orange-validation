@@ -192,7 +192,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="" class="x">Login</a>
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary mt-2 w-50"
+                                >
+                                    Login
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -205,17 +210,26 @@
             let pass = document.getElementById("password");
             let form = document.forms[0];
 
-            form.onsubmit = () => {
-                if (
-                    email.value == localStorage.getItem("email") &&
-                    pass.value == localStorage.getItem("password")
-                ) {
-                    sessionStorage.setItem("email", email.value);
-                    sessionStorage.settem("password", pass.value);
-                    sessionStorage.settem(
-                        "name",
-                        email.value.slice(0, indexOf("@"))
+            console.log(email);
+            console.log(pass);
+            console.log(form);
+            const em = localStorage.getItem("email");
+            const pa = localStorage.getItem("password");
+            console.log(em);
+            console.log(pa);
+
+            form.onsubmit = (e) => {
+                if (email.value === em && pass.value === pa) {
+                    sessionStorage.setItem(
+                        "email",
+                        localStorage.getItem("email")
                     );
+                    sessionStorage.setItem(
+                        "Name",
+                        localStorage.getItem("Name")
+                    );
+                } else {
+                    e.preventDefault();
                 }
             };
         </script>
