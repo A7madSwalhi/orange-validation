@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="index.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/fonts/HelvNeue55_W1G.woff2"
+            rel="preload"
+            as="font"
+            type="font/woff2"
+            integrity="sha384-R6e0PFLMMV6HBvkQK22ecNfjOzyh89wSndiTC71MuvoaOnhIYgOAGVC0gW0kVN16"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/fonts/HelvNeue75_W1G.woff2"
+            rel="preload"
+            as="font"
+            type="font/woff2"
+            integrity="sha384-ylOkwNNvSwXpWNbpEhI45ruJTXyfQbIb42IxMvSGGcndZBpZ9iAmOFSUl4/Goeqz"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/css/orange-helvetica.min.css"
+            rel="stylesheet"
+            integrity="sha384-A0Qk1uKfS1i83/YuU13i2nx5pk79PkIfNFOVzTcjCMPGKIDj9Lqx9lJmV7cdBVQZ"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/css/boosted.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+            rel="stylesheet"
+        />
+        <title>Boosted Example</title>
+        <script src="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/js/boosted.bundle.min.js"></script>
+        <style>
+            .border-bottom {
+                border-bottom: 2px solid black !important;
+            }
+
+            #colorWhite:hover {
+                color: white !important;
+                background-color: black;
+            }
+
+            #colorWhite {
+                color: black !important;
+                background-color: white;
+            }
+
+            @media (max-width: 1023px) {
+                #hideImage {
+                    display: none !important;
+                }
+
+                #full {
+                    width: 100% !important;
+                    justify-content: center;
+                }
+
+                #half {
+                    width: 50% !important;
+                }
+            }
+
+            @media (max-width: 768px) {
+                #half {
+                    width: 100% !important;
+                }
+            }
+        </style>
+    </head>
+    <body class="h-100">
+        <div class=".container-fluid d-flex">
+            <div class="col-4 d-none d-lg-block">
+                <div
+                    id="carouselExamplePause"
+                    class="carousel slide h-100"
+                    data-bs-ride="carousel"
+                    data-bs-pause="false"
+                >
+                    <div class="carousel-action-bar">
+                        <div class="carousel-indicators">
+                            <button
+                                type="button"
+                                data-bs-target="#carouselExamplePause"
+                                data-bs-slide-to="0"
+                                class="active"
+                                aria-label="Slide 1"
+                            ></button>
+                            <button
+                                type="button"
+                                data-bs-target="#carouselExamplePause"
+                                data-bs-slide-to="1"
+                                aria-label="Slide 2"
+                                class=""
+                                aria-current="true"
+                            ></button>
+                        </div>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img
+                                id="hideImage"
+                                src="ii.jpg"
+                                class="d-block w-100"
+                                alt="Second slide"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="full" class="col-12 col-md-8 d-flex flex-column">
+                <header data-bs-theme="light" class="flex-shrink-0">
+                    <nav
+                        class="navbar navbar-expand-sm border-bottom"
+                        aria-label="Global navigation - With search box example"
+                    >
+                        <div class="container-xxl">
+                            <!-- Orange brand logo -->
+                            <a class="navbar-brand" href="#">
+                                <img
+                                    src="logo.png"
+                                    alt="Brand Logo"
+                                    width="100"
+                                    height="auto"
+                                />
+                            </a>
+                            <!-- Burger menu (visible on small screens) -->
+                            <button
+                                class="navbar-toggler ms-auto"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation"
+                            >
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <!-- Navbar with links -->
+                            <div
+                                class="collapse navbar-collapse ms-auto"
+                                id="navbarSupportedContent"
+                            >
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link"
+                                            aria-current="page"
+                                            href="#"
+                                            >Help</a
+                                        >
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#"
+                                            >Terms & Conditions</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div
+                        class="flex-grow-1 d-flex flex-column justify-content-center"
+                    >
+                        <!-- form -->
+                        <form
+                            id="half"
+                            class="row g-3 d-flex w-75 flex-column m-auto"
+                        >
+                            <div class="fw-bold fs-1">Create an account</div>
+                            <div class="mt-4">
+                                <label for="inputEmail4" class="form-label"
+                                    >Email</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="email"
+                                />
+                                <div id="inputEmail4Valid"></div>
+                                eg:username@domain.com
+                            </div>
+                            <div class="mt-4">
+                                <label for="inputAddress" class="form-label"
+                                    >Phone</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="mobile"
+                                />
+                                <div id="phoneValid"></div>
+                                eg:077*******
+                            </div>
+                            <div class="mt-4">
+                                <label for="inputPassword4" class="form-label"
+                                    >Create Password</label
+                                >
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                />
+                                <div id="inputPassword4Valid"></div>
+                                the password should be At least one uppercase
+                                letter, lowercase letter, digit, special
+                                character
+                            </div>
+                            <div class="mt-4">
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="chAgree"
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="gridCheck"
+                                    >
+                                        I agree to the terms & conditions
+                                        Orange.
+                                        <div id="reqtext1"></div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="is_newsletter"
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="gridCheck"
+                                    >
+                                        Receive Coding Academy Newsletter.
+                                        <div id="reqtext2"></div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <button
+                                    type="submit"
+                                    id="btnSubmit"
+                                    class="btn btn-primary mt-2 w-100"
+                                >
+                                    Sign in
+                                </button>
+                            </div>
+                            <div class="mt-4">
+                                <a href="login.html">
+                                    <input
+                                        type="button"
+                                        class="btn btn-primary mt-2 w-100"
+                                        value="Already have an account? Login"
+                                    />
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <!-- Bootstrap JS (Make sure to include Bootstrap's JavaScript and dependencies) -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
